@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Dynamically set max workers based on system's CPU count to optimize performance
 executor = ThreadPoolExecutor(max_workers=min(32, (multiprocessing.cpu_count() or 1) * 5))
 
-def download_and_convert(url, output_dir='downloads'):
+def download_and_convert(url, output_dir='/tmp'):
     """
     Downloads YouTube audio and converts it directly to MP3 format using yt-dlp and pydub.
     """
@@ -43,7 +43,7 @@ def download_and_convert(url, output_dir='downloads'):
 
     return mp3_file
 
-def zip_files(file_list, output_dir='downloads'):
+def zip_files(file_list, output_dir='/tmp'):
     """
     Zips a list of files into one archive.
     
@@ -92,6 +92,4 @@ def download():
         return f"An error occurred: {str(e)}", 500
 
 if __name__ == '__main__':
-    if not os.path.exists('downloads'):
-        os.makedirs('downloads')
     app.run(debug=True)
