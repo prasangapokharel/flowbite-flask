@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to MP3 Bulk Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Teko', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-black h-screen flex items-center justify-center">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-6 text-center text-white">YouTube to MP3 Bulk Downloader</h2>
+        <form action="/download" method="POST" class="space-y-4">
+            <textarea name="urls" placeholder="Enter YouTube URLs separated by commas" class="border rounded-lg w-full p-4 h-32 bg-gray-700 text-white transition duration-300 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+            <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg w-full py-2 transition duration-300 ease-in-out hover:opacity-90">Download MP3s</button>
+        </form>
+        <p class="mt-4 text-center text-gray-400 text-sm">Paste multiple YouTube links, separated by commas, to download their audio in MP3 format.</p>
+        <div id="successMessage" class="hidden mt-4 text-center text-green-500 text-sm">Successfully downloaded MP3s!</div>
+    </div>
+
+    
+</body>
+</html>
